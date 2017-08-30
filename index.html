@@ -103,10 +103,10 @@
                     if (myGameArea.frameNo == 1 || everyinterval(150)) {
                         x = myGameArea.canvas.width;
                         minHeight = 20;
-                        maxHeight = 50;
+                        maxHeight = 200;
                         height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
                         minGap = 50;
-                        maxGap = 70;
+                        maxGap = 200;
                         gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
                         myObstacles.push(new component(10, height, "green", x, 0));
                         myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
@@ -131,16 +131,10 @@
                 function accelerate(n) {
                     myGamePiece.gravity = n;
                 }
-            document.body.onkeydown = function(e) {
-                if (e.keyCode == 32) {
-                    accelerate(-0.2)
-                }
-                else {
-                    accelerate(0.05)
-                }
         </script>
         <br>
-        <p>Use the Space-bar to fly in the air</p>
+        <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">Fly</button>
+        <p>Use the Fly button to stay in the air</p>
         <p>How long can you stay alive?</p>
     </body>
 
