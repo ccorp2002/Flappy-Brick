@@ -131,10 +131,13 @@
                 function accelerate(n) {
                     myGamePiece.gravity = n;
                 }
-            document.body.onkeydown = function(e){
-                if(e.keyCode == 32){
-            onspacedown="accelerate(-0.2)"
-            onspaceup="accelerate(0.05)"
+            document.body.onkeydown = function(e) {
+                if (e.keyCode == 32) {
+                    accelerate(-0.2)
+                }
+                else {
+                    accelerate(0.05)
+                }
         </script>
         <br>
         <p>Use the Space-bar to fly in the air</p>
